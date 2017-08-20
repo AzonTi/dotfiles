@@ -1,0 +1,9 @@
+[user]
+	name = Azon
+	email = syu.takayama@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = nano
+[fetch]
+	prune = true
