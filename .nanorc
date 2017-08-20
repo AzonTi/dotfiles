@@ -1,0 +1,11 @@
+set autoindent
+set historylog
+set multibuffer
+set nowrap
+set smooth
+set suspend
+set tabsize 2
+set softwrap
+set linenumbers
+
+include "/usr/share/nano/*.nanorc"
