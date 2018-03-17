@@ -1,0 +1,8 @@
+set display-special true
+set show-line-numbers true
+set tab-width 2
+set detect-indent 2,4
+set ws-error auto-indent,space-align,special,trailing
+
+bind ^Q "quit; command \"quit -f\""
+bind ^W "close -wq; command \"close -wqf\""
