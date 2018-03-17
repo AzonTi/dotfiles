@@ -7,6 +7,10 @@
 
 alias ls='ls --color=auto'
 
+RED=$(tput setaf 1)
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -60,9 +64,9 @@ function parse_git_dirty {
 
 function nonzero_return() {
 	RETVAL=$?
-	[ $RETVAL -ne 0 ] && tput setaf 1 && tput bold
+	[ $RETVAL -ne 0 ] && echo "$RED"
 }
 
-export PS1="\`nonzero_return\`\u@\h \w\`parse_git_branch\`\`tput sgr0\`\\$ "
+export PS1="\[\`nonzero_return\`$BOLD\]\u@\h \w\`parse_git_branch\`\\$\[$RESET\] "
 
 alias pbcopy='xsel --clipboard --input'
