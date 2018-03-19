@@ -68,3 +68,6 @@ function color {
 export PS1="\[\`color\`$BOLD\]\u@\h \w\`parse_git_branch\`\\$\[$RESET\] "
 
 alias pbcopy='xsel --clipboard --input'
+
+export GOPATH=~/go
+export PATH="$PATH:$GOPATH/bin"
