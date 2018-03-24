@@ -4,5 +4,5 @@ set tab-width 2
 set detect-indent 2,4
 set ws-error auto-indent,space-align,special,trailing
 
-alias qf "quit -f"
-alias cf "close -wqf"
+bind C-M-Q "quit -f"
+bind C-M-W "close -wqf"
