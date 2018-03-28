@@ -6,3 +6,4 @@ set ws-error auto-indent,space-align,special,trailing
 
 bind C-M-Q "quit -f"
 bind C-M-W "close -wqf"
+bind ^R    "command 'replace -cg '"
