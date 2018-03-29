@@ -7,3 +7,5 @@
 	editor = dte
 [fetch]
 	prune = true
+[url "git@git.trapti.tech:"]
+	insteadOf = https://git.trapti.tech/
