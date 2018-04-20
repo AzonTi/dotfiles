@@ -21,8 +21,6 @@ set number
 set cursorline
 set nocursorcolumn
 
-set virtualedit=onemore
-
 set smartindent
 
 set novisualbell
