@@ -16,6 +16,11 @@ set showcmd
 
 syntax on
 
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+set ambiwidth=double
+
 set number
 
 set cursorline
