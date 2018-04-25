@@ -1,3 +1,7 @@
+augroup MyVimrc
+    autocmd!
+augroup END
+
 set enc=utf-8
 set fenc=utf-8
 
@@ -14,12 +18,18 @@ set confirm
 set showcmd
 
 
+set ambiwidth=double
+
+augroup MyVimrc
+    autocmd ColorScheme * highlight UnicodeSpaces cterm=underline ctermfg=59 ctermbg=16 gui=underline guifg=#465457 guibg=#000000
+    autocmd VimEnter,WinEnter * match UnicodeSpaces /\%u180E\|\%u2000\|\%u2001\|\%u2002\|\%u2003\|\%u2004\|\%u2005\|\%u2006\|\%u2007\|\%u2008\|\%u2009\|\%u200A\|\%u2028\|\%u2029\|\%u202F\|\%u205F\|\%u3000/
+augroup END
+
 syntax on
+colorscheme elflord
 
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-
-set ambiwidth=double
+set listchars=tab:»-,trail:-,eol:$,extends:»,precedes:«,nbsp:%
 
 set number
 
