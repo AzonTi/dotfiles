@@ -69,6 +69,7 @@ export PS1="\[\`color\`$BOLD\]\u@\h \w\`parse_git_branch\`\\$\[$RESET\] "
 
 alias pbcopy='xclip -i -selection clipboard'
 alias pbpaste='xclip -o -selection clipboard'
+alias open='xdg-open &>/dev/null'
 
 export GOPATH=~/go
 export PATH="$PATH:$GOPATH/bin"
