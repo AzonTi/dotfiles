@@ -29,11 +29,11 @@ syntax on
 colorscheme elflord
 
 set list
-set listchars=tab:»-,trail:-,eol:$,extends:»,precedes:«,nbsp:%
+set listchars=tab:»-,trail:_,eol:$,extends:»,precedes:«,nbsp:%
 
 set number
 
-set cursorline
+set nocursorline
 set nocursorcolumn
 
 set smartindent
