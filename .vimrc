@@ -2,8 +2,26 @@ augroup MyVimrc
 	autocmd!
 augroup END
 
+set nocompatible
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'derekwyatt/vim-scala'
+
+Plugin 'fatih/vim-go'
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+
+Plugin 'lervag/vimtex'
+
+call vundle#end()
+filetype plugin indent on
+
 set enc=utf-8
-set fenc=utf-8
+set fencs=utf-8,cp932
 
 set swapfile
 set nobackup
@@ -26,10 +44,10 @@ augroup MyVimrc
 augroup END
 
 syntax on
-colorscheme elflord
+colorscheme koehler
 
 set list
-set listchars=tab:»-,trail:_,eol:$,extends:»,precedes:«,nbsp:%
+set listchars=tab:»-,trail:￮,eol:￩,extends:»,precedes:«,nbsp:￭
 
 set number
 
