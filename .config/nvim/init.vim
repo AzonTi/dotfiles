@@ -101,6 +101,7 @@ augroup MyVimrc
 augroup END
 
 let g:WebDevIconsUnicodeDecorateFolderNodes=1
+let g:DevIconsEnableFoldersOpenClose=1
 
 
 """ search
