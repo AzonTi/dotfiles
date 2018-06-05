@@ -6,6 +6,14 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias pbcopy='xclip -i -selection clipboard'
+alias pbpaste='xclip -o -selection clipboard'
+alias open='xdg-open &>/dev/null'
+
+export EDITOR=nvim
+export VISUAL=nvim
+export GOPATH=~/go
+export PATH="$PATH:$GOPATH/bin"
 
 RED=$(tput setaf 1)
 BOLD=$(tput bold)
@@ -60,16 +68,9 @@ function parse_git_dirty {
 	fi
 }
 
-function color {
+function set_color {
 	RETVAL=$?
 	[ $RETVAL -ne 0 ] && echo "$RED"
 }
 
-export PS1="\[\`color\`$BOLD\]\u@\h \w\`parse_git_branch\`\\$\[$RESET\] "
-
-alias pbcopy='xclip -i -selection clipboard'
-alias pbpaste='xclip -o -selection clipboard'
-alias open='xdg-open &>/dev/null'
-
-export GOPATH=~/go
-export PATH="$PATH:$GOPATH/bin"
+export PS1="\[\`set_color\`$BOLD\]\u@\h \w\`parse_git_branch\`\\$\[$RESET\] "
