@@ -50,7 +50,10 @@ set fencs=utf-8,cp932
 
 set swapfile
 set nobackup
-set undofile
+if has('persistent_undo')
+	execute 'set undodir=' . g:cache_home . '/nvim/undo'
+	set undofile
+endif
 
 set autoread
 set autowrite
