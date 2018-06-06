@@ -30,8 +30,12 @@ if dein#load_state(s:dein_dir)
 	call dein#begin(s:dein_dir)
 
 	call dein#add(s:dein_repo)
+
 	call dein#add('scrooloose/nerdtree')
 	call dein#add('ryanoasis/vim-devicons')	
+
+	call dein#add('miyakogi/seiya.vim')
+	call dein#add('sjl/badwolf')
 
 	call dein#end()
 	call dein#save_state()
@@ -71,8 +75,10 @@ augroup MyVimrc
 	autocmd VimEnter,WinEnter * match UnicodeSpaces /\%u180E\|\%u2000\|\%u2001\|\%u2002\|\%u2003\|\%u2004\|\%u2005\|\%u2006\|\%u2007\|\%u2008\|\%u2009\|\%u200A\|\%u2028\|\%u2029\|\%u202F\|\%u205F\|\%u3000/
 augroup END
 
+let g:seiya_auto_enable=1
+
 syntax on
-colorscheme koehler
+colorscheme badwolf
 
 set list
 set listchars=tab:»-,trail:￮,eol:￩,extends:»,precedes:«,nbsp:￭
