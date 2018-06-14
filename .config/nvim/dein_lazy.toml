@@ -29,6 +29,14 @@ repo = 'Shougo/neosnippet-snippets'
 
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = [ 'toml' ]
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = [ 'javascript' ]
+
+[[plugins]]
 repo = 'posva/vim-vue'
 on_ft = [ 'vue' ]
 hook_add = '''
