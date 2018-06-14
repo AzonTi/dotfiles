@@ -1,0 +1,40 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertCharPre'
+hook_add = '''
+	let g:deoplete#enable_at_startup = 1
+	imap <expr><tab> pumvisible() ? "\<C-n>" : neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = [ 'javascript' ]
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_event = 'InsertCharPre'
+on_ft = [ 'snippet' ]
+depends = [ 'neosnippet-snippets' ]
+hook_add = '''
+	imap <C-k> <Plug>(neosnippet_expand_or_jump)
+	smap <C-k> <Plug>(neosnippet_expand_or_jump)
+	xmap <C-k> <Plug>(neosnippet_expand_target)
+	if has('conceal')
+		set conceallevel=2 concealcursor=niv
+	endif
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = [ 'vue' ]
+hook_add = '''
+	augroup MyVimrc
+		autocmd FileType vue syntax sync fromstart
+	augroup END
+	setlocal iskeyword+=$
+	setlocal iskeyword+=-
+'''
