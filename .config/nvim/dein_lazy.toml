@@ -7,10 +7,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-on_ft = [ 'javascript' ]
-
-[[plugins]]
 repo = 'Shougo/neosnippet.vim'
 on_event = 'InsertCharPre'
 on_ft = [ 'snippet' ]
