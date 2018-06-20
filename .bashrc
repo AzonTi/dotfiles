@@ -9,6 +9,7 @@ alias ls='ls --color=auto'
 alias pbcopy='xclip -i -selection clipboard'
 alias pbpaste='xclip -o -selection clipboard'
 alias open='xdg-open &>/dev/null'
+alias package-list='comm -23 <(pacman -Qqe) <(pacman -Qqg base base-devel xorg-apps xfce4 xfce4-goodies fcitx-im | sort)'
 
 export EDITOR=nvim
 export VISUAL=nvim
