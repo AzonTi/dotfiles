@@ -1,6 +1,7 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertCharPre'
+on_ft = [ 'typescript' ]
 hook_add = '''
 	let g:deoplete#enable_at_startup = 1
 	imap <expr><tab> pumvisible() ? "\<C-n>" : neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
@@ -25,12 +26,31 @@ repo = 'Shougo/neosnippet-snippets'
 
 
 [[plugins]]
+repo = 'fatih/vim-go'
+on_ft = [ 'go' ]
+
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+on_ft = [ 'typescript' ]
+build = 'bash install.sh'
+
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+on_ft = [ 'go' ]
+
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = [ 'toml' ]
 
 [[plugins]]
 repo = 'othree/yajs.vim'
 on_ft = [ 'javascript' ]
+
+[[plugins]]
+repo = 'HerringtonDarkholme/yats.vim'
+on_ft = [ 'typescript' ]
 
 [[plugins]]
 repo = 'posva/vim-vue'
