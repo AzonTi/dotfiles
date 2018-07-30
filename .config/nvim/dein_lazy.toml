@@ -31,11 +31,6 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'fatih/vim-go'
 on_ft = [ 'go' ]
 
-[[plugins]]
-repo = 'mhartington/nvim-typescript'
-on_ft = [ 'typescript' ]
-build = 'bash install.sh'
-
 
 [[plugins]]
 repo = 'zchee/deoplete-go'

@@ -63,6 +63,8 @@ set hidden
 
 set confirm
 
+set expandtab
+
 
 """ view
 syntax on
