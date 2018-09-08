@@ -65,6 +65,8 @@ set confirm
 
 set expandtab
 
+set mouse=a
+
 
 """ view
 syntax on

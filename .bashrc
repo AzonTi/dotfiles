@@ -16,7 +16,14 @@ alias package-list='comm -23 <(pacman -Qqe) <(pacman -Qqg base base-devel xorg-a
 export EDITOR=nvim
 export VISUAL=nvim
 export GOPATH=~/go
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/.local/bin"
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
 
 RED=$(tput setaf 1)
 BOLD=$(tput bold)
