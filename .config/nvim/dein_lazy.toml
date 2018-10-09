@@ -43,11 +43,19 @@ on_ft = [ 'toml' ]
 
 [[plugins]]
 repo = 'othree/yajs.vim'
-on_ft = [ 'javascript' ]
+on_ft = [ 'javascript', 'javascriptreact' ]
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = [ 'javascriptreact' ]
 
 [[plugins]]
 repo = 'HerringtonDarkholme/yats.vim'
-on_ft = [ 'typescript' ]
+on_ft = [ 'typescript', 'typescriptreact' ]
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = [ 'typescriptreact' ]
 
 [[plugins]]
 repo = 'posva/vim-vue'
@@ -59,3 +67,7 @@ hook_add = '''
 	setlocal iskeyword+=$
 	setlocal iskeyword+=-
 '''
+
+[[plugins]]
+repo = 'tomlion/vim-solidity'
+on_ft = [ 'solidity' ]
