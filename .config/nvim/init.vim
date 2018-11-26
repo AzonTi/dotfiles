@@ -99,6 +99,8 @@ set wildmode=list:longest
 set tabstop=2
 set shiftwidth=2
 
+set ambiwidth=double
+
 
 """ search
 set ignorecase

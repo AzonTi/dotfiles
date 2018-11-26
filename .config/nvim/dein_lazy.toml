@@ -27,15 +27,22 @@ hook_add = '''
 repo = 'Shougo/neosnippet-snippets'
 
 
+# All in One
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = [ 'go' ]
 
 
+# Auto-completion
 [[plugins]]
 repo = 'zchee/deoplete-go'
 on_ft = [ 'go' ]
 
+
+# Syntax Highlight
+[[plugins]]
+repo = 'octol/vim-cpp-enhanced-highlight'
+on_ft = [ 'c', 'cpp' ]
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -48,6 +55,9 @@ on_ft = [ 'javascript', 'javascriptreact' ]
 [[plugins]]
 repo = 'mxw/vim-jsx'
 on_ft = [ 'javascriptreact' ]
+hook_add = '''
+	let g:jsx_ext_required = 1
+'''
 
 [[plugins]]
 repo = 'HerringtonDarkholme/yats.vim'

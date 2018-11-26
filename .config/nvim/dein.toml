@@ -9,7 +9,6 @@ on_if = '!has("nvim")'
 repo = 'roxma/vim-hug-neovim-rpc'
 on_if = '!has("nvim")'
 
-
 [[plugins]]
 repo = 'sjl/badwolf'
 hook_add = '''
@@ -77,7 +76,7 @@ hook_add = '''
 	endfunction
 
 	function! LightLineReadonly()
-		return &ft !~? 'help\|nerdtree' && &readonly ? ' ' : ''
+		return &ft !~? 'help\|nerdtree' && &readonly ? '' : ''
 	endfunction
 
 	function! LightLineFilename()
@@ -85,11 +84,11 @@ hook_add = '''
 	endfunction
 
 	function! LightLineFiletype()
-		return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol()[0:2] : 'no ft') : ''
+		return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . WebDevIconsGetFileTypeSymbol()[0:2] : 'no ft') : ''
 	endfunction
 
 	function! LightLineFileformat()
-		return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+		return winwidth(0) > 70 ? (&fileformat . WebDevIconsGetFileFormatSymbol()) : ''
 	endfunction
 
 	function! LightLineFileencoding()
@@ -125,7 +124,7 @@ hook_add = '''
 		try
 			if &ft !~? 'vimfiler\|gundo\|vaffle' && exists('*fugitive#head')
 				let _ = fugitive#head()
-				return strlen(_) ? ' '._ : ''
+				return strlen(_) ? ''._ : ''
 			endif
 		catch
 		endtry
@@ -148,11 +147,11 @@ hook_add = '''
 		\ 'typescriptreact': 'typescript'
 		\ }
 	let g:ale_fixers={
+		\ 'go': [ 'gofmt' ],
 		\ 'javascript': [ 'eslint' ],
 		\ 'javascriptreact': [ 'eslint' ],
 		\ 'typescript': [ 'tslint' ],
-		\ 'typescriptreact': [ 'tslint' ],
-		\ 'go': [ 'gofmt' ]
+		\ 'typescriptreact': [ 'tslint' ]
 		\ }
 	let g:ale_fix_on_save=1
 	let g:ale_sign_column_always=1
@@ -165,6 +164,8 @@ rev = 'next'
 build = 'bash install.sh'
 hook_add = '''
 	let g:LanguageClient_serverCommands = {
+    \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
+    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
 		\ 'javascript': ['javascript-typescript-stdio'],
 		\ 'vue': ['vls'],
 		\ }
