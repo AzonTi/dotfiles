@@ -1,5 +1,5 @@
 [user]
-	name = Azon
+	name = Syu Takayama
 	email = syu.takayama@gmail.com
 [color]
 	ui = auto
@@ -7,3 +7,8 @@
 	editor = nvim
 [fetch]
 	prune = true
+[alias]
+  co = checkout
+  graph = log --graph
+  diffi = diff --cached
+  diffw = diff --word-diff

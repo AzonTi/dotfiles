@@ -1,12 +1,12 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertCharPre'
-hook_add = '''
-	let g:deoplete#enable_at_startup = 1
-	imap <expr><tab> pumvisible() ? "\<C-n>" : neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-	augroup MyVimrc
-		autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-	augroup END
+hook_source = '''
+  let g:deoplete#enable_at_startup = 1
+  imap <expr><tab> pumvisible() ? "\<C-n>" : neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+  augroup MyVimrc
+    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+  augroup END
 '''
 
 [[plugins]]
@@ -14,13 +14,13 @@ repo = 'Shougo/neosnippet.vim'
 on_event = 'InsertCharPre'
 on_ft = [ 'snippet' ]
 depends = [ 'neosnippet-snippets' ]
-hook_add = '''
-	imap <C-k> <Plug>(neosnippet_expand_or_jump)
-	smap <C-k> <Plug>(neosnippet_expand_or_jump)
-	xmap <C-k> <Plug>(neosnippet_expand_target)
-	if has('conceal')
-		set conceallevel=2 concealcursor=niv
-	endif
+hook_source = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
 '''
 
 [[plugins]]
@@ -32,12 +32,18 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'fatih/vim-go'
 on_ft = [ 'go' ]
 
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = [ 'tex' ]
+hook_source = '''
+  let g:tex_flavor = 'latex'
+  let g:vimtex_compiler_latexmk_engines = { '_': '-pdfdvi' }
+'''
 
 # Auto-completion
 [[plugins]]
 repo = 'zchee/deoplete-go'
 on_ft = [ 'go' ]
-
 
 # Syntax Highlight
 [[plugins]]
@@ -56,7 +62,7 @@ on_ft = [ 'javascript', 'javascriptreact' ]
 repo = 'mxw/vim-jsx'
 on_ft = [ 'javascriptreact' ]
 hook_add = '''
-	let g:jsx_ext_required = 1
+  let g:jsx_ext_required = 1
 '''
 
 [[plugins]]
@@ -70,12 +76,12 @@ on_ft = [ 'typescriptreact' ]
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = [ 'vue' ]
-hook_add = '''
-	augroup MyVimrc
-		autocmd FileType vue syntax sync fromstart
-	augroup END
-	setlocal iskeyword+=$
-	setlocal iskeyword+=-
+hook_source = '''
+  augroup MyVimrc
+    autocmd FileType vue syntax sync fromstart
+  augroup END
+  setlocal iskeyword+=$
+  setlocal iskeyword+=-
 '''
 
 [[plugins]]
