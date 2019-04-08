@@ -76,7 +76,7 @@ hook_add = '''
   endfunction
 
   function! LightLineReadonly()
-    return &ft !~? 'help\|nerdtree' && &readonly ? '' : ''
+    return &ft !~? 'help\|nerdtree' && &readonly ? ' ' : ''
   endfunction
 
   function! LightLineFilename()
@@ -124,7 +124,7 @@ hook_add = '''
     try
       if &ft !~? 'vimfiler\|gundo\|vaffle' && exists('*fugitive#head')
         let _ = fugitive#head()
-        return strlen(_) ? ''._ : ''
+        return strlen(_) ? ' '._ : ''
       endif
     catch
     endtry

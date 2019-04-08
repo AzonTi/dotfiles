@@ -47,7 +47,7 @@ endif
 filetype plugin indent on
 
 set enc=utf-8
-set fencs=utf-8,cp932
+set fencs=utf-8,utf16le,cp932
 
 set swapfile
 set nobackup
@@ -75,6 +75,7 @@ set list
 set listchars=tab:»-,trail:￮,eol:￩,extends:»,precedes:«,nbsp:￭
 augroup MyVimrc
 	autocmd ColorScheme * highlight UnicodeSpaces cterm=underline ctermfg=0 ctermbg=1 gui=underline guifg=#000000 guibg=#800000
+  autocmd ColorScheme * highlight Conceal ctermfg=2 ctermbg=0
 	autocmd VimEnter,WinEnter * match UnicodeSpaces /\%u180E\|\%u2000\|\%u2001\|\%u2002\|\%u2003\|\%u2004\|\%u2005\|\%u2006\|\%u2007\|\%u2008\|\%u2009\|\%u200A\|\%u2028\|\%u2029\|\%u202F\|\%u205F\|\%u3000/
 augroup END
 
@@ -99,8 +100,14 @@ set wildmode=list:longest
 set tabstop=2
 set shiftwidth=2
 
-set ambiwidth=double
+set ambiwidth=single
 
+if has('conceal')
+  set conceallevel=2 concealcursor=
+endif
+
+let g:tex_flavor = 'latex'
+let g:tex_conceal = "abdmg"
 
 """ search
 set ignorecase
@@ -114,19 +121,3 @@ set wrapscan
 
 
 """ key
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-noremap <PageUp> <Nop>
-noremap <PageDown> <Nop>
-noremap <Home> <Nop>
-noremap <End> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <PageUp> <Nop>
-inoremap <PageDown> <Nop>
-inoremap <Home> <Nop>
-inoremap <End> <Nop>
