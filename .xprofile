@@ -2,4 +2,6 @@ export QT_QPA_PLATFORMTHEME=gtk2
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_ed25519
 compton -b

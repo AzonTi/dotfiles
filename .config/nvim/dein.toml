@@ -148,10 +148,11 @@ hook_add = '''
     \ }
   let g:ale_fixers={
     \ 'go': [ 'gofmt' ],
+    \ 'python': [ 'autopep8' ],
     \ 'javascript': [ 'eslint' ],
     \ 'javascriptreact': [ 'eslint' ],
-    \ 'typescript': [ 'tslint' ],
-    \ 'typescriptreact': [ 'tslint' ]
+    \ 'typescript': [ 'eslint', 'tslint' ],
+    \ 'typescriptreact': [ 'eslint', 'tslint' ]
     \ }
   let g:ale_fix_on_save=1
   let g:ale_sign_column_always=1
@@ -166,6 +167,7 @@ hook_add = '''
   let g:LanguageClient_serverCommands = {
     \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
     \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
+    \ 'python': ['pyls'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'vue': ['vls'],
     \ }
