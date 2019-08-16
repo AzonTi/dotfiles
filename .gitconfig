@@ -9,9 +9,9 @@
 [fetch]
 	prune = true
 [alias]
-  co = checkout
-  graph = log --graph
-  diffi = diff --cached
-  diffw = diff --word-diff
+	co = checkout
+	graph = log --graph
+	diffi = diff --cached
+	diffw = diff --word-diff
 [url "git@git.trapti.tech:"]
-       insteadOf = https://git.trapti.tech/
+	insteadOf = https://git.trapti.tech/
