@@ -9,11 +9,13 @@ source /usr/share/nvm/init-nvm.sh
 
 eval $(thefuck --alias)
 
-alias ls='ls --color=auto'
-alias pbcopy='xclip -i -selection clipboard'
-alias pbpaste='xclip -o -selection clipboard'
-alias open='xdg-open &>/dev/null'
-alias package-list='comm -23 <(pacman -Qqe) <(pacman -Qqg base base-devel xorg-apps xfce4 xfce4-goodies fcitx-im texlive-most | sort)'
+alias ls="ls --color=auto"
+alias pbcopy="xclip -i -selection clipboard"
+alias pbpaste="xclip -o -selection clipboard"
+alias open="xdg-open &>/dev/null"
+GROUP_LIST="base-devel xorg-apps xfce4 xfce4-goodies fcitx-im texlive-most"
+alias package-list="comm -23 <((pacman -Qqe; echo ${GROUP_LIST} | tr ' ' '\n') | sort) <(pacman -Qqg ${GROUP_LIST} | sort)"
+alias urlencode="node -p \"encodeURIComponent(require('fs').readFileSync('/dev/stdin')).replace(/%20/g,'+')\""
 
 export EDITOR=nvim
 export VISUAL=nvim

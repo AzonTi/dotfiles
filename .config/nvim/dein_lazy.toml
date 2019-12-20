@@ -3,16 +3,6 @@ repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertCharPre'
 hook_source = '''
   let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 0
-  let g:deoplete#auto_complete_start_length = 1
-  let g:deoplete#enable_camel_case = 0
-  let g:deoplete#enable_ignore_case = 0
-  let g:deoplete#enable_refresh_always = 0
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#file#enable_buffer_path = 1
-  let g:deoplete#max_list = 10000
-  let g:deoplete#max_abbr_width = 0
-  let g:deoplete#max_menu_width = 0
   imap <expr><tab> pumvisible() ? "\<C-n>" : neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
 [[plugins]]
@@ -32,70 +22,9 @@ repo = 'Shougo/neosnippet-snippets'
 
 # All in One
 [[plugins]]
-repo = 'fatih/vim-go'
-on_ft = [ 'go' ]
-hook_source = '''
-  let g:go_def_mode='gopls'
-  let g:go_info_mode='gopls'
-'''
-
-[[plugins]]
 repo = 'lervag/vimtex'
 on_ft = [ 'tex' ]
 hook_source = '''
   let g:vimtex_compiler_latexmk_engines = { '_': '-pdfdvi' }
   let g:vimtex_view_general_viewer = 'mupdf'
 '''
-
-# Syntax Highlight
-[[plugins]]
-repo = 'octol/vim-cpp-enhanced-highlight'
-on_ft = [ 'c', 'cpp' ]
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = [ 'toml' ]
-
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-on_ft = [ 'markdown' ]
-hook_source = '''
-  let g:vim_markdown_folding_disabled = 1
-  let g:vim_markdown_math = 1
-  let g:vim_markdown_frontmatter = 1
-  let g:vim_markdown_new_list_item_indent = 2
-'''
-
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = [ 'javascript', 'javascriptreact' ]
-
-[[plugins]]
-repo = 'mxw/vim-jsx'
-on_ft = [ 'javascriptreact' ]
-hook_source = '''
-  let g:jsx_ext_required = 1
-'''
-
-[[plugins]]
-repo = 'HerringtonDarkholme/yats.vim'
-on_ft = [ 'typescript', 'typescriptreact' ]
-
-[[plugins]]
-repo = 'peitalin/vim-jsx-typescript'
-on_ft = [ 'typescriptreact' ]
-
-[[plugins]]
-repo = 'posva/vim-vue'
-on_ft = [ 'vue' ]
-hook_source = '''
-  augroup MyVimrc
-    autocmd FileType vue syntax sync fromstart
-  augroup END
-  setlocal iskeyword+=$
-  setlocal iskeyword+=-
-'''
-
-[[plugins]]
-repo = 'tomlion/vim-solidity'
-on_ft = [ 'solidity' ]
