@@ -50,7 +50,10 @@ set enc=utf-8
 set fencs=utf-8,utf16le,cp932
 
 set swapfile
+set updatetime=300
+
 set nobackup
+
 if has('persistent_undo')
   execute 'set undodir=' . g:cache_home . '/nvim/undo'
   set undofile
@@ -81,6 +84,8 @@ augroup END
 
 set number
 
+set signcolumn=yes
+
 set showcmd
 set noshowmode
 
@@ -92,8 +97,6 @@ set smartindent
 set novisualbell
 
 set showmatch
-
-set laststatus=2
 
 set wildmode=list:longest
 
