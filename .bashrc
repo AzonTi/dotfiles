@@ -9,18 +9,29 @@ source /usr/share/nvm/init-nvm.sh
 
 eval $(thefuck --alias)
 
+# ------------------------------------------------------------------------------
+
 alias ls="ls --color=auto"
-alias pbcopy="xclip -i -selection clipboard"
-alias pbpaste="xclip -o -selection clipboard"
-alias open="xdg-open &>/dev/null"
+
 GROUP_LIST="base-devel xfce4 fcitx-im texlive-most"
 alias package-list="comm -23 <((pacman -Qqe; echo ${GROUP_LIST} | tr ' ' '\n') | sort) <(pacman -Qqg ${GROUP_LIST} | sort)"
-alias urlencode="node -p \"encodeURIComponent(require('fs').readFileSync('/dev/stdin')).replace(/%20/g,'+')\""
+
+alias open="xdg-open &>/dev/null"
+
+alias pbcopy="xclip -i -selection clipboard"
+alias pbpaste="xclip -o -selection clipboard"
+
+# ---
+
+export PATH="$PATH:$HOME/.local/bin"
 
 export EDITOR=nvim
 export VISUAL=nvim
+
 export GOPATH=~/go
-export PATH="$PATH:$GOPATH/bin:$HOME/.local/bin"
+export PATH="$PATH:$GOPATH/bin"
+
+# ------------------------------------------------------------------------------
 
 RED=$(tput setaf 1)
 BOLD=$(tput bold)
