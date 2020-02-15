@@ -40,8 +40,7 @@ RESET=$(tput sgr0)
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-	if [ ! "${BRANCH}" == "" ]
-	then
+	if [ ! "${BRANCH}" == "" ]; then
 		STAT=`parse_git_dirty`
 		echo "[${BRANCH}${STAT}]"
 	else
@@ -87,8 +86,7 @@ function parse_git_dirty {
 }
 
 function set_color {
-	RETVAL=$?
-	[ $RETVAL -ne 0 ] && echo "$RED"
+	[ $? -ne 0 ] && echo "$RED"
 }
 
 export PS1="\[\`set_color\`$BOLD\]\u@\h \w\`parse_git_branch\`\\$\[$RESET\] "
