@@ -4,12 +4,10 @@
 	signingKey = 655C614BC5509DDCE5D6E7B6B4C0E3634D1D7747
 [color]
 	ui = auto
-[core]
-	editor = nvim
 [fetch]
 	prune = true
 [alias]
 	graph = log --graph
-	diff-index = diff --cached
+	diffcached = diff --cached
 [url "git@git.trapti.tech:"]
 	insteadOf = https://git.trapti.tech/
