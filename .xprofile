@@ -1,5 +1,0 @@
-if [[ -d ~/.profile.d ]]; then
-  for file in ~/.profile.d/*.[cg].sh; do
-    source "$file"
-  done
-fi
