@@ -6,6 +6,8 @@
 	ui = auto
 [fetch]
 	prune = true
+[pull]
+	rebase = false
 [alias]
 	graph = log --graph
 	diffcached = diff --cached
