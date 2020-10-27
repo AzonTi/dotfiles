@@ -1,5 +1,5 @@
 {
-  "metals.javaHome": "/usr/lib/jvm/java-11-openjdk",
+  "diagnostic.displayByAle": true,
   "languageserver": {
     "cquery": {
       "command": "clangd",
