@@ -165,6 +165,9 @@ repo = 'HerringtonDarkholme/yats.vim'
 
 [[plugins]]
 repo = 'posva/vim-vue'
+hook_add = '''
+  let g:vue_pre_processors = []
+'''
 
 [[plugins]]
 repo = 'tomlion/vim-solidity'
