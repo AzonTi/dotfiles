@@ -13,3 +13,5 @@
 	diffcached = diff --cached
 [url "git@git.trapti.tech:"]
 	insteadOf = https://git.trapti.tech/
+[init]
+	defaultBranch = main
