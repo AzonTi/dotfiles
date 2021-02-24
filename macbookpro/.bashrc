@@ -1,3 +1,7 @@
+#
+# ~/.bashrc
+#
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -7,7 +11,7 @@ if [[ -d ~/.bashrc.d ]]; then
   done
 fi
 
-alias ls="ls --color=auto"
+alias ls='ls --color=auto'
 
 RED=$(tput setaf 1)
 BOLD=$(tput bold)

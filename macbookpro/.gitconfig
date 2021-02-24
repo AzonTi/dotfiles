@@ -2,16 +2,11 @@
 	name = Shu Takayama
 	email = syu.takayama@gmail.com
 	signingKey = 603A6216E63564908B709300576A0276D0A93647
-[color]
-	ui = auto
 [fetch]
 	prune = true
 [pull]
 	rebase = false
-[alias]
-	graph = log --graph
-	diffcached = diff --cached
-[url "git@git.trapti.tech:"]
-	insteadOf = https://git.trapti.tech/
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
