@@ -3,10 +3,6 @@ augroup MyVimrc
   autocmd!
 augroup END
 
-if &compatible
-  set nocompatible
-endif
-
 
 """ envs
 let g:cache_home = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_HOME
@@ -14,7 +10,11 @@ let g:config_home = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CON
 
 
 """ plugins
-let s:dein_dir = g:cache_home . '/dein'
+if !has('nvim')
+  let s:dein_dir = g:cache_home . '/vim/dein'
+else
+  let s:dein_dir = g:cache_home . '/nvim/dein'
+endif
 
 let s:dein_repo = 'Shougo/dein.vim'
 if &runtimepath !~# s:dein_repo
@@ -55,7 +55,11 @@ set updatetime=300
 set nobackup
 
 if has('persistent_undo')
-  execute 'set undodir=' . g:cache_home . '/nvim/undo'
+  if !has('nvim')
+    execute 'set undodir=' . g:cache_home . '/vim/undo'
+  else
+    execute 'set undodir=' . g:cache_home . '/nvim/undo'
+  endif
   set undofile
 endif
 
@@ -111,6 +115,10 @@ endif
 
 let g:tex_flavor = 'latex'
 let g:tex_conceal = "abdmg"
+
+if !has('nvim')
+  set laststatus=2
+endif
 
 
 """ search
